@@ -18,7 +18,7 @@ jobs:
             - name: output
               id: puboutput
               run: echo " outputis=keep learning " >> $GITHUB_OUTPUT
-            - name: download artifacts
+            - name: upload artifacts
               uses: actions/upload-artifact@v4
               with:
                 name: otput
@@ -31,7 +31,7 @@ jobs:
         - name: download artifacts
           uses: actions/download-artifact@v4
           with:
-            name: download artifacts
+            name: otput
         - name: listing the files
           run: ls
         - name: showing the output
