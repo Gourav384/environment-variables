@@ -3,10 +3,10 @@ on:
     push:
         branches:
             - master
-env:
-    CONFIDENTIAL_NAME: "Learner"
-    CONFIDENTIAL_USERID: "Learner213"
-    CONFIDENTIAL_PASSWORD: "Learner@123"    
+#env:
+#    CONFIDENTIAL_NAME: "Learner"
+#    CONFIDENTIAL_USERID: "Learner213"
+#    CONFIDENTIAL_PASSWORD: "Learner@123"    
 jobs:
     first_job:
         runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
             - name: calling first environment variable
               run: echo "name= $CONFIDENTIAL_NAME"
             - name: calling second environment variable
-              run: echo "name= $CONFIDENTIAL_NAME"
+              run: echo "name= $CONFIDENTIAL_USERID"
             
 
                     
