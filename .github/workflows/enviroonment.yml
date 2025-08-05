@@ -3,10 +3,10 @@ on:
     push:
         branches:
             - master
-#env:
-#    CONFIDENTIAL_NAME: "Learner"
-#    CONFIDENTIAL_USERID: "Learner213"
-#    CONFIDENTIAL_PASSWORD: "Learner@123"    
+env:
+    CONFIDENTIAL_NAME: ${{ secrets.CONFIDENTIAL_NAME }}
+    CONFIDENTIAL_USERID: ${{ secrets.CONFIDENTIAL_USERID }}
+    CONFIDENTIAL_PASSWORD: "Learner@123"    
 jobs:
     first_job:
         runs-on: ubuntu-latest
