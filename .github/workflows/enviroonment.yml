@@ -39,7 +39,7 @@ jobs:
               id: download
               run: echokk
             - name: showing the output
-              if: failure() && steps.download.outcome == 'failure'
+              if: failure() && steps.download.conclusion == 'failure'
               run: echo ${{needs.first_job.outputs.first_output}}
             - name: finishing
               run: echo "finishing job"
