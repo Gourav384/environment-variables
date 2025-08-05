@@ -38,8 +38,9 @@ jobs:
             - name: running dummy
               id: download
               run: echokk
+              if: failure() && steps.download.outcome == 'failure'
             - name: showing the output
-              if: failure() && steps.download.conclusion == 'failure'
+              if: failure() && steps.download.outcome == 'failure'
               run: echo ${{needs.first_job.outputs.first_output}}
             - name: finishing
               run: echo "finishing job"
