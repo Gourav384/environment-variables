@@ -25,19 +25,19 @@ jobs:
                 path: |
                     dependency
     Second_job:
-       needs: first_job 
-       runs-on: ubuntu-latest
-       steps:
-        - name: download artifacts
-          uses: actions/download-artifact@v4
-          with:
-            name: otput
-        - name: listing the files
-          run: ls
-        - name: showing the output
-          run: echo ${{needs.first_job.outputs.first_output}}
-        - name: finishing
-          run: echo "finishing job"
+        needs: first_job 
+        runs-on: ubuntu-latest
+        steps:
+            - name: download artifacts
+              uses: actions/download-artifact@v4
+              with:
+                name: otput
+            - name: listing the files
+              run: ls
+            - name: showing the output
+              run: echo ${{needs.first_job.outputs.first_output}}
+            - name: finishing
+              run: echo "finishing job"
 
 
 #environment variables concept
