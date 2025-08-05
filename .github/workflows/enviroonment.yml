@@ -31,7 +31,7 @@ jobs:
         - name: download artifacts
           uses: actions/download-artifact@v4
           with:
-            name: download artifacts
+            name: otput
         - name: listing the files
           run: ls
         - name: showing the output
