@@ -28,13 +28,15 @@ jobs:
         needs: first_job 
         runs-on: ubuntu-latest
         steps:
-#            - name: download artifacts
-#             uses: actions/download-artifact@v4
-#              with:
-#                name: otput
+            - name: download artifacts
+              uses: actions/download-artifact@v4
+              id: download
+              with:
+                name: otput
 #            - name: listing the files
 #              run: ls
             - name: showing the output
+              if: failure() && steps.download.outcome == 'failure'
               run: echo ${{needs.first_job.outputs.first_output}}
             - name: finishing
               run: echo "finishing job"
